@@ -30,7 +30,7 @@ fn get_ignored(location: &PathBuf) -> Option<Vec<PathBuf>> {
 
     let mut all_set = HashSet::new();
     let mut ign_set = HashSet::new();
-    let mut output = vec![];
+    let mut output = vec![PathBuf::from(&ignore_file_name)];
 
     for x in all {
         all_set.insert(x.expect("Found invalid path: Aborting").path().to_owned());
